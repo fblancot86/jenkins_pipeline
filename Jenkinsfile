@@ -1,5 +1,17 @@
-node {
-    stage('Is there python?') {
-        sh 'python --version'
+pipeline {
+    agent {
+        label('python')
+    }
+    stages {
+        stage('Test') {
+            steps {
+                sh 'echo hola'
+            }
+        }
+        stage('Is there any python?') {
+            steps {
+                sh 'python --version'
+            }
+        }
     }
 }
