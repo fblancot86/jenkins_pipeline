@@ -5,6 +5,9 @@ pipeline {
     environment {
         PYPI_CREDENTIALS = credentials("PyPI credentials")
     }
+    triggers {
+        cron('*/2 * * * *')
+    }
     stages {
         stage('Build') {
             steps {
